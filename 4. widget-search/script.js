@@ -10,5 +10,4 @@ const title = document.querySelector('.title');
 btn.addEventListener('click', () => {
     search.classList.toggle('active');
     input.focus();
-    title.classList.toggle('active');
 })
