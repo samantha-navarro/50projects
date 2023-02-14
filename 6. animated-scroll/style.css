@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Tiro+Gurmukhi:ital@0;1&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #efedd6;
+    font-family: 'Tiro Gurmukhi', serif;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 100vw; */
+    overflow-x: hidden;
+    /* overflow: hidden; */
+}
+
+.box {
+    background-color: tan;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(250%);
+    transition: transform 0.4s ease;
+}
+
+.box.show {
+    transform: translateX(0);
+}
+
+.box:nth-of-type(even) {
+    transform: translateX(-250%);
+}
+
+.box h2 {
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+
+
