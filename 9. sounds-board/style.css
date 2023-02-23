@@ -5,11 +5,33 @@
 }
 
 body {
+    background: rgba(161, 100, 223);
     font-family: 'Tiro Gurmukhi', serif;
-    margin: 0;
     display: flex;
+    margin: 0;
     align-items: center;
     justify-content: center;
+    text-align: center;
     height: 100vh;
     overflow: hidden;
 }
+
+.btn {
+    background-color: rebeccapurple;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+
+
+
