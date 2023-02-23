@@ -40,8 +40,9 @@ h1 {
   margin: 50px auto;
   /* 50px top and bottom and auto left and right */
   font-size: 20px;
-  line-height: 40px;
+  line-height: 30px;
   max-width: 600px;
+  font-style: italic;
 }
 
 .btn {
