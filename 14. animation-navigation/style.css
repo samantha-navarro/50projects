@@ -1,15 +1,117 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Tiro+Gurmukhi:ital@0;1&display=swap');
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Tiro Gurmukhi', serif;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+  background-color: lightgreen;
+  background-image: linear-gradient(
+    to bottom,
+    lightgreen 0%,
+    whitesmoke 50%,
+    whitesmoke 50%,
+    lightgreen 100%
+  );
+  font-family: 'Tiro Gurmukhi', serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  background-color: whitesmoke;
+  padding: 20px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: width 0.6s linear;
+  /* effect is linear */
+}
+
+nav.active {
+  width: 350px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  /* takes away the bullet list on the links */
+  padding: 0;
+  margin: 0;
+  width: 0;
+  /* when not active we want the width of it to be 0 */
+  transition: width 0.6s linear;
+}
+
+nav.active ul {
+  width: 100%;
+}
+
+nav ul li {
+  /* rotate effect */
+  transform: rotateY(0deg);
+  opacity: 0;
+  /* only want it to show when its on the active state */
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav.active ul li {
+  opacity: 1;
+  transform: rotateY(360deg);
+}
+
+nav ul a {
+  position: relative;
+  color: black;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* icon */
+.icon {
+  background-color: whitesmoke;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+
+.icon:focus {
+  outline: 0;
+}
+
+.icon .line {
+  background-color: rgb(6, 253, 6);
+  height: 2px;
+  position: absolute;
+  width: 20px;
+  top: 10px;
+  left: 5px;
+  /* they are in the same position with each other, will fix .line2 to move it down */
+  transition: transform 0.6s linear;
+  /* rotates */
+}
+
+.icon .line2 {
+  top: auto;
+  bottom: 10px;
+}
+
+/* rotate in different directions */
+nav.active .icon .line1 {
+  transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .icon .line2 {
+  /* now we have an X */
+  transform: rotate(765deg) translateY(-5.5px);
 }
