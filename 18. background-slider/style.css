@@ -12,7 +12,7 @@ body {
   justify-content: center;
   height: 100vh;
   /* overflow: hidden; */
-  background-image: url('https://www.outdoorphotographer.com/images/stories/2016/may/milkyway/lead.jpg');
+  /* background-image: url('https://www.outdoorphotographer.com/images/stories/2016/may/milkyway/lead.jpg'); */
   /* on the x and y axis */
   background-position: center center;
   background-size: cover;
