@@ -1,15 +1,148 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Tiro+Gurmukhi:ital@0;1&display=swap');
 
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+}
+
+/* for when the dark mode toggles it will have a ease in transition */
+html {
+  transition: all 0.5s ease-in;
+}
+
+html.dark {
+  --primary-color: white;
+  --secondary-color: black;
+}
+
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Tiro Gurmukhi', serif;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+  font-family: 'Tiro Gurmukhi', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.toggle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 100px;
+  cursor: pointer;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #f0f0f0;
+}
+
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  /* rotating the needle */
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  /* will have this move */
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  /* will have this move */
+  transform: translate(-50%, -100%) rotate(0deg);
+  /* the longer leg handle */
+  height: 100px;
+}
+
+.needle.second {
+  /* will have this move */
+  transform: translate(-50%, -100%) rotate(0deg);
+  /* the longer leg handle */
+  height: 100px;
+  background-color: #e74c3c;
+}
+
+.center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* puts the center point in the middle */
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+/* since we're using ::after we need content */
+/* creating a black dot in the middle of the red center point */
+.center-point::after {
+  content: '';
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* puts the center point in the middle */
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+  font-size: 60px;
+}
+
+.date {
+  color: #aaa;
+  letter-spacing: 0.3px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: (var(--secondary-color));
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
 }
