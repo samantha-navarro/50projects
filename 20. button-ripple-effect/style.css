@@ -1,15 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Tiro+Gurmukhi:ital@0;1&display=swap');
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Tiro Gurmukhi', serif;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
+  background-color: black;
+
+  font-family: 'Tiro Gurmukhi', serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+button {
+  background-color: plum;
+  border: 1px purple solid;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* 20 = top and bottom 30 = left and right */
+  padding: 20px 30px;
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
+button .circle {
+  position: absolute;
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* on the x and y axis */
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 0.5s ease-out;
+}
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    /* fading out effect */
+    opacity: 0;
+  }
 }
