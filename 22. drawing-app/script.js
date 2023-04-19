@@ -2,7 +2,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-let size = 20;
+let size = 10;
 let isPressed = false;
 let color = 'black';
 let x;
@@ -65,3 +65,47 @@ function drawLine(x1, y1, x2, y2) {
 // will show a black circle that's 100 on the x axis and 200 down the y axis within the canvas
 // drawCircle(100, 200)
 // drawLine(300, 200, 100, 300)
+
+// TOOLBOX CONTROLS
+const increaseBtn = document.getElementById('increase');
+const decreaseBtn = document.getElementById('decrease');
+const sizeEL = document.getElementById('size');
+const colorEl = document.getElementById('color');
+const clearBtn = document.getElementById('clear');
+
+// FUNCTION
+function updateSizeOnScreen() {
+  sizeEL.innerText = size;
+}
+
+increaseBtn.addEventListener('click', () => {
+  // append 5
+  size += 5;
+
+  if (size > 50) {
+    size = 50;
+  }
+
+  updateSizeOnScreen();
+});
+
+decreaseBtn.addEventListener('click', () => {
+  // append 5
+  size -= 5;
+
+  if (size < 5) {
+    size = 5;
+  }
+
+  updateSizeOnScreen();
+});
+
+// changing the color
+colorEl.addEventListener('change', (e) => {
+  color = e.target.value;
+});
+
+// being able to clear the canvas
+clearBtn.addEventListener('click', () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
